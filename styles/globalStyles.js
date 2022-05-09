@@ -8,6 +8,7 @@ export const globalStyles = (
 				margin: 0;
 				background: papayawhip;
 				font-family: "Roboto", sans-serif;
+				min-height: 200vh;
 			}
 		`}
 	/>

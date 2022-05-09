@@ -1,6 +1,8 @@
 import { getAllProjects, getHomeData } from "@lib/datocms";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 import styled from "@emotion/styled";
 import ProjectCard from "@components/ProjectCard";
 
@@ -21,8 +23,22 @@ export default function Home({ home, allProjects }) {
 	const q = gsap.utils.selector(el);
 
 	useEffect(() => {
-		gsap.from(header.current, { yPercent: "-100" });
-		gsap.to(header.current, { yPercent: "0", duration: 1 });
+		const show = gsap
+			.from(header.current, {
+				yPercent: -100,
+				duration: 1,
+			})
+			.progress(1);
+
+		ScrollTrigger.create({
+			start: "top top",
+			end: "bottom bottom",
+			onUpdate: (self) => {
+				if (window.pageYOffset > header.current.offsetHeight) {
+					self.direction === -1 ? show.play() : show.reverse();
+				}
+			},
+		});
 
 		gsap.from(q(".projectCard"), {
 			opacity: 0,
@@ -57,6 +73,9 @@ const Header = styled.header`
 	padding: 1rem 2rem;
 	background-color: white;
 	box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
+	position: sticky;
+	top: 0;
+	z-index: 99;
 `;
 const H1 = styled.h1`
 	width: fit-content;

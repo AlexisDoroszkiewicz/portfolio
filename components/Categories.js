@@ -8,7 +8,7 @@ export default function Categories({ categories }) {
 				const img = category.image;
 
 				return (
-					<ImgWrap>
+					<ImgWrap key={category.id}>
 						<Image
 							src={img.url}
 							width={img.width}
