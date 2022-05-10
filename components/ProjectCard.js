@@ -83,6 +83,8 @@ const Card = styled.div`
 	@media (max-width: 750px) {
 		grid-template-columns: 1fr;
 		gap: 1rem;
+		padding-bottom: 4rem;
+		border-bottom: var(--border);
 	}
 `;
 

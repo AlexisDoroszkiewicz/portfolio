@@ -31,4 +31,7 @@ const Flex = styled.div`
 	flex-direction: column;
 	gap: 8rem;
 	margin-top: 6rem;
+	@media (max-width: 750px) {
+		gap: 4rem;
+	}
 `;

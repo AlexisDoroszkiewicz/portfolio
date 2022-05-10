@@ -18,4 +18,7 @@ const StyledFooter = styled.footer`
 	justify-content: center;
 	padding-block: 2em;
 	font-size: var(--step--1);
+	a {
+		color: black;
+	}
 `;
