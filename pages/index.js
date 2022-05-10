@@ -1,4 +1,6 @@
 import { getAllProjects, getHomeData } from "@lib/datocms";
+import { renderMetaTags } from "react-datocms";
+import Head from "next/head";
 import styled from "@emotion/styled";
 import ProjectList from "@components/ProjectsList";
 
@@ -16,6 +18,7 @@ export async function getStaticProps() {
 export default function Home({ home, allProjects }) {
 	return (
 		<>
+			<Head>{renderMetaTags(home._seoMetaTags)}</Head>
 			<header></header>
 			<Main>
 				<H1>{home.pageTitle}</H1>
