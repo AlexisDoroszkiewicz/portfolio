@@ -13,6 +13,7 @@ export default function Categories({ categories }) {
 							src={img.url}
 							width={img.width}
 							height={img.height}
+							alt={img.alt}
 							layout="responsive"
 						/>
 					</ImgWrap>

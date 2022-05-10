@@ -4,7 +4,7 @@ import ProjectCard from "@components/ProjectCard";
 export default function ProjectList({ allProjects }) {
 	return (
 		<Section>
-			<h2>Latest work</h2>
+			<H2>Latest Work</H2>
 			<Flex>
 				{allProjects.map((project, index) => (
 					<ProjectCard
@@ -20,6 +20,10 @@ export default function ProjectList({ allProjects }) {
 
 const Section = styled.section`
 	margin-block: 4rem;
+`;
+
+const H2 = styled.h2`
+	width: fit-content;
 `;
 
 const Flex = styled.div`
