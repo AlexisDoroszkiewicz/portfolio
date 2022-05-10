@@ -5,7 +5,8 @@ export default function Footer() {
 		<StyledFooter>
 			<a
 				href="https://github.com/AlexisDoroszkiewicz/portfolio"
-				target="_blank">
+				target="_blank"
+				rel="noreferrer">
 				Designed & Built by Alexis Doroszkiewicz
 			</a>
 		</StyledFooter>

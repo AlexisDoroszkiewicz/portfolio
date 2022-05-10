@@ -47,7 +47,7 @@ export default function ProjectCard({ project, index }) {
 	}, []);
 	return (
 		<Card index={index}>
-			<a href={project.link} target="_blank">
+			<a href={project.link} target="_blank" rel="noreferrer">
 				<ImgWrap ref={imgref}>
 					<Image
 						src={img.url}
