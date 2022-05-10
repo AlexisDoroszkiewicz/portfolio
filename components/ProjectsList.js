@@ -30,5 +30,5 @@ const Flex = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 8rem;
-	margin-top: 4rem;
+	margin-top: 6rem;
 `;

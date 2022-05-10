@@ -20,14 +20,26 @@ export default function Home({ home, allProjects }) {
 		<>
 			<Head>{renderMetaTags(home._seoMetaTags)}</Head>
 			<header></header>
-			<Main>
+			<Intro>
 				<H1>{home.pageTitle}</H1>
+			</Intro>
+			<Main>
 				<ProjectList allProjects={allProjects} />
 			</Main>
 			<footer />
 		</>
 	);
 }
+
+const Intro = styled.section`
+	min-height: 100vh;
+	padding-inline: 5vw;
+	max-width: 1200px;
+	margin-inline: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+`;
 
 const Main = styled.main`
 	padding-inline: 5vw;
