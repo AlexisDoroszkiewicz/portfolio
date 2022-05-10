@@ -12,7 +12,6 @@ export const globalStyles = (
 			}
 			html {
 				font-family: "Roboto", sans-serif;
-				line-height: 1.5;
 			}
 			body {
 				margin: 0;
@@ -21,6 +20,9 @@ export const globalStyles = (
 					rgba(255, 255, 255, 1) 0%,
 					rgba(255, 126, 222, 0.03407300420168069) 100%
 				);
+			}
+			strong {
+				color: rgb(237, 87, 237);
 			}
 		`}
 	/>

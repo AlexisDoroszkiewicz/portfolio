@@ -22,8 +22,8 @@ export const reset = css`
 	}
 
 	/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-	ul[role="list"],
-	ol[role="list"] {
+	ul,
+	ol {
 		list-style: none;
 	}
 
@@ -35,12 +35,11 @@ export const reset = css`
 	/* Set core body defaults */
 	body {
 		min-height: 100vh;
-		text-rendering: optimizeSpeed;
 		line-height: 1.5;
 	}
 
 	/* A elements that don't have a class get default styles */
-	a:not([class]) {
+	a {
 		text-decoration-skip-ink: auto;
 	}
 

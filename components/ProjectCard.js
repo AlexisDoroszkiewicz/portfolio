@@ -2,11 +2,36 @@ import Image from "next/image";
 import styled from "@emotion/styled";
 import Categories from "@components/Categories";
 import { StructuredText } from "react-datocms";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+import { useEffect, useRef } from "react";
 
 export default function ProjectCard({ project, index }) {
 	const img = project.featuredImage;
+
+	const content = useRef();
+
+	useEffect(() => {
+		gsap.fromTo(
+			content.current,
+			{
+				yPercent: 50,
+			},
+			{
+				yPercent: -50,
+				ease: "none",
+				scrollTrigger: {
+					trigger: content.current,
+					// start: "top bottom", // the default values
+					// end: "bottom top",
+					scrub: 1,
+				},
+			}
+		);
+	}, []);
 	return (
-		<Card className="projectCard" index={index}>
+		<Card index={index}>
 			<ImgWrap>
 				<Image
 					src={img.url}
@@ -19,8 +44,8 @@ export default function ProjectCard({ project, index }) {
 				/>
 			</ImgWrap>
 
-			<Content index={index}>
-				<H2>{project.name}</H2>
+			<Content index={index} ref={content}>
+				<h3>{project.name}</h3>
 				<StructuredText data={project.excerpt.value} />
 				<Categories categories={project.categories} />
 			</Content>
@@ -58,12 +83,8 @@ const Content = styled.div`
 		${({ index }) =>
 			index % 2 ? "margin-right: -8em" : "margin-left: -8em"};
 		background-color: rgba(250, 250, 255, 0.99);
-		box-shadow: 0 4px 32px 0 rgba(31, 38, 135, 0.2);
+		box-shadow: 0 4px 32px 0 rgba(148, 55, 148, 0.2);
 		border-radius: var(--radius);
 		border: var(--border);
 	}
-`;
-
-const H2 = styled.h2`
-	margin: 0;
 `;

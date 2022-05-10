@@ -3,11 +3,18 @@ import ProjectCard from "@components/ProjectCard";
 
 export default function ProjectList({ allProjects }) {
 	return (
-		<Flex>
-			{allProjects.map((project, index) => (
-				<ProjectCard key={project.id} project={project} index={index} />
-			))}
-		</Flex>
+		<>
+			<h2></h2>
+			<Flex>
+				{allProjects.map((project, index) => (
+					<ProjectCard
+						key={project.id}
+						project={project}
+						index={index}
+					/>
+				))}
+			</Flex>
+		</>
 	);
 }
 
