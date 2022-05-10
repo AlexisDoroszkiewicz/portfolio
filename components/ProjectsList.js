@@ -1,10 +1,37 @@
 import styled from "@emotion/styled";
 import ProjectCard from "@components/ProjectCard";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+import { useEffect, useRef } from "react";
 
 export default function ProjectList({ allProjects }) {
+	const h2ref = useRef();
+
+	useEffect(() => {
+		ScrollTrigger.matchMedia({
+			"(min-width: 750px)": function () {
+				gsap.fromTo(
+					h2ref.current,
+					{
+						yPercent: 100,
+					},
+					{
+						yPercent: 0,
+						ease: "none",
+						scrollTrigger: {
+							trigger: h2ref.current,
+							scrub: 1,
+							end: "bottom 50",
+						},
+					}
+				);
+			},
+		});
+	}, []);
 	return (
 		<Section>
-			<H2>Latest Work</H2>
+			<H2 ref={h2ref}>Latest Work</H2>
 			<Flex>
 				{allProjects.map((project, index) => (
 					<ProjectCard
