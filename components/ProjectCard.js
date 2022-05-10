@@ -16,10 +16,10 @@ export default function ProjectCard({ project, index }) {
 		gsap.fromTo(
 			content.current,
 			{
-				yPercent: 50,
+				yPercent: 45,
 			},
 			{
-				yPercent: -50,
+				yPercent: -30,
 				ease: "none",
 				scrollTrigger: {
 					trigger: content.current,
@@ -62,10 +62,9 @@ const Card = styled.div`
 
 const ImgWrap = styled.div`
 	box-shadow: var(--shadow);
-	img {
-		border-radius: var(--radius);
-		border: var(--border) !important;
-	}
+	border-radius: var(--radius);
+	border: var(--border);
+	overflow: hidden;
 `;
 
 const Content = styled.div`
@@ -77,6 +76,7 @@ const Content = styled.div`
 	align-items: ${({ index }) => (index % 2 ? "flex-start" : "flex-end")};
 
 	p {
+		width: max-content;
 		z-index: 1;
 		box-shadow: var(--shadow);
 		padding: 2em;

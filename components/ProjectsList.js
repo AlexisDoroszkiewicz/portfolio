@@ -3,8 +3,8 @@ import ProjectCard from "@components/ProjectCard";
 
 export default function ProjectList({ allProjects }) {
 	return (
-		<>
-			<h2></h2>
+		<Section>
+			<h2>Latest work</h2>
 			<Flex>
 				{allProjects.map((project, index) => (
 					<ProjectCard
@@ -14,13 +14,17 @@ export default function ProjectList({ allProjects }) {
 					/>
 				))}
 			</Flex>
-		</>
+		</Section>
 	);
 }
 
-const Flex = styled.section`
+const Section = styled.section`
+	margin-block: 4rem;
+`;
+
+const Flex = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 8rem;
-	margin-block: 4rem;
+	margin-top: 4rem;
 `;
