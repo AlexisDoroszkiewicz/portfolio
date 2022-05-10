@@ -14,36 +14,40 @@ export default function ProjectCard({ project, index }) {
 	const imgref = useRef();
 
 	useEffect(() => {
-		gsap.fromTo(
-			content.current,
-			{
-				yPercent: 45,
+		ScrollTrigger.matchMedia({
+			"(min-width: 750px)": function () {
+				gsap.fromTo(
+					content.current,
+					{
+						yPercent: 45,
+					},
+					{
+						yPercent: -30,
+						ease: "none",
+						scrollTrigger: {
+							trigger: content.current,
+							scrub: 1,
+						},
+					}
+				);
+				gsap.fromTo(
+					imgref.current,
+					{
+						opacity: 0,
+						yPercent: 5,
+					},
+					{
+						opacity: 1,
+						yPercent: -5,
+						scrollTrigger: {
+							trigger: imgref.current,
+							scrub: 1,
+							end: "bottom 95%",
+						},
+					}
+				);
 			},
-			{
-				yPercent: -30,
-				ease: "none",
-				scrollTrigger: {
-					trigger: content.current,
-					scrub: 1,
-				},
-			}
-		);
-		gsap.fromTo(
-			imgref.current,
-			{
-				opacity: 0,
-				yPercent: 5,
-			},
-			{
-				opacity: 1,
-				yPercent: -5,
-				scrollTrigger: {
-					trigger: imgref.current,
-					scrub: 1,
-					end: "bottom 95%",
-				},
-			}
-		);
+		});
 	}, []);
 	return (
 		<Card index={index}>
@@ -76,6 +80,10 @@ const Card = styled.div`
 	grid-template-columns: ${({ index }) =>
 		index % 2 ? "1fr 2fr" : "2fr 1fr"};
 	align-items: center;
+	@media (max-width: 750px) {
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
 `;
 
 const ImgWrap = styled.div`
@@ -94,12 +102,15 @@ const ImgWrap = styled.div`
 `;
 
 const Content = styled.div`
-	order: ${({ index }) => index % 2 && "-1"};
-	text-align: ${({ index }) => (index % 2 ? "left" : "right")};
+	@media (min-width: 750px) {
+		order: ${({ index }) => index % 2 && "-1"};
+		text-align: ${({ index }) => (index % 2 ? "left" : "right")};
+		align-items: ${({ index }) => (index % 2 ? "flex-start" : "flex-end")};
+	}
+
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
-	align-items: ${({ index }) => (index % 2 ? "flex-start" : "flex-end")};
 
 	p {
 		width: max-content;
@@ -112,5 +123,13 @@ const Content = styled.div`
 		box-shadow: 0 4px 32px 0 rgba(148, 55, 148, 0.2);
 		border-radius: var(--radius);
 		border: var(--border);
+		@media (max-width: 850px) {
+			${({ index }) =>
+				index % 2 ? "margin-right: -4em" : "margin-left: -4em"};
+		}
+		@media (max-width: 750px) {
+			width: 100%;
+			margin: 0;
+		}
 	}
 `;
