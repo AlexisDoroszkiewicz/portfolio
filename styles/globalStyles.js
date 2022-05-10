@@ -38,10 +38,15 @@ export const globalStyles = (
 			body {
 				margin: 0;
 				background: linear-gradient(
-					180deg,
-					rgba(255, 255, 255, 1) 0%,
-					rgba(255, 126, 222, 0.03407300420168069) 100%
-				);
+						195deg,
+						rgba(255, 255, 255, 0) 0%,
+						rgba(255, 126, 222, 0.03) 100%
+					),
+					linear-gradient(
+						45deg,
+						rgba(255, 255, 255, 0) 0%,
+						rgba(255, 126, 222, 0.03) 100%
+					);
 			}
 			strong {
 				color: rgb(237, 87, 237);

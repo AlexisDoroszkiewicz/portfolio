@@ -38,7 +38,6 @@ export default function ProjectCard({ project, index }) {
 					width={img.width}
 					height={img.height}
 					alt={img.alt}
-					sizes="50vw"
 					placeholder="blur"
 					blurDataURL={img.blurUpThumb}
 					layout="responsive"
