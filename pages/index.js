@@ -3,6 +3,7 @@ import { renderMetaTags } from "react-datocms";
 import Head from "next/head";
 import styled from "@emotion/styled";
 import ProjectList from "@components/ProjectsList";
+import Footer from "@components/Footer";
 
 // data
 export async function getStaticProps() {
@@ -26,7 +27,7 @@ export default function Home({ home, allProjects }) {
 			<Main>
 				<ProjectList allProjects={allProjects} />
 			</Main>
-			<footer />
+			<Footer />
 		</>
 	);
 }

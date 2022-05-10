@@ -11,6 +11,7 @@ export default function ProjectCard({ project, index }) {
 	const img = project.featuredImage;
 
 	const content = useRef();
+	const imgref = useRef();
 
 	useEffect(() => {
 		gsap.fromTo(
@@ -23,27 +24,43 @@ export default function ProjectCard({ project, index }) {
 				ease: "none",
 				scrollTrigger: {
 					trigger: content.current,
-					// start: "top bottom", // the default values
-					// end: "bottom top",
 					scrub: 1,
+				},
+			}
+		);
+		gsap.fromTo(
+			imgref.current,
+			{
+				opacity: 0,
+				yPercent: 5,
+			},
+			{
+				opacity: 1,
+				yPercent: -5,
+				scrollTrigger: {
+					trigger: imgref.current,
+					scrub: 1,
+					end: "bottom 95%",
 				},
 			}
 		);
 	}, []);
 	return (
 		<Card index={index}>
-			<ImgWrap>
-				<Image
-					src={img.url}
-					width={img.width}
-					height={img.height}
-					alt={img.alt}
-					placeholder="blur"
-					blurDataURL={img.blurUpThumb}
-					layout="responsive"
-					priority
-				/>
-			</ImgWrap>
+			<a href={project.link} target="_blank">
+				<ImgWrap ref={imgref}>
+					<Image
+						src={img.url}
+						width={img.width}
+						height={img.height}
+						alt={img.alt}
+						placeholder="blur"
+						blurDataURL={img.blurUpThumb}
+						layout="responsive"
+						priority
+					/>
+				</ImgWrap>
+			</a>
 
 			<Content index={index} ref={content}>
 				<h3>{project.name}</h3>
@@ -66,6 +83,14 @@ const ImgWrap = styled.div`
 	border-radius: var(--radius);
 	border: var(--border);
 	overflow: hidden;
+	img {
+		transition: transform 0.6s ease;
+	}
+	&:hover {
+		img {
+			transform: scale(1.05);
+		}
+	}
 `;
 
 const Content = styled.div`
