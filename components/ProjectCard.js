@@ -30,22 +30,6 @@ export default function ProjectCard({ project, index }) {
 						},
 					}
 				);
-				gsap.fromTo(
-					imgref.current,
-					{
-						opacity: 0,
-						yPercent: 5,
-					},
-					{
-						opacity: 1,
-						yPercent: -5,
-						scrollTrigger: {
-							trigger: imgref.current,
-							scrub: 1,
-							end: "bottom 95%",
-						},
-					}
-				);
 			},
 		});
 	}, []);
