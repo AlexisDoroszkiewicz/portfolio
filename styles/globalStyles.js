@@ -8,7 +8,10 @@ export const globalStyles = (
 			:root {
 				--shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.1);
 				--radius: 4px;
-				--border: 1px solid rgba(99, 80, 96, 0.6);
+				--grey: rgba(99, 80, 96, 0.6);
+				--border: 1px solid var(--grey);
+				--accent: rgb(237, 87, 237);
+				--accentAlpha: rgba(237, 87, 237, 0.03);
 
 				--step--2: clamp(0.61rem, calc(0.58rem + 0.16vw), 0.72rem);
 				--step--1: clamp(0.73rem, calc(0.68rem + 0.24vw), 0.9rem);
@@ -46,16 +49,16 @@ export const globalStyles = (
 				background: linear-gradient(
 						195deg,
 						rgba(255, 255, 255, 0) 0%,
-						rgba(255, 126, 222, 0.03) 100%
+						var(--accentAlpha) 100%
 					),
 					linear-gradient(
 						45deg,
 						rgba(255, 255, 255, 0) 0%,
-						rgba(255, 126, 222, 0.03) 100%
+						var(--accentAlpha) 100%
 					);
 			}
 			strong {
-				color: rgb(237, 87, 237);
+				color: var(--accent);
 			}
 			/* width */
 			::-webkit-scrollbar {
@@ -69,7 +72,7 @@ export const globalStyles = (
 
 			/* Handle */
 			::-webkit-scrollbar-thumb {
-				background: rgba(99, 80, 96, 0.6);
+				background: var(--grey);
 			}
 
 			/* Handle on hover */
