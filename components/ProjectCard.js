@@ -100,6 +100,12 @@ const Content = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
+	@media (max-width: 750px) {
+		display: contents;
+		h3 {
+			order: -1;
+		}
+	}
 
 	p {
 		width: max-content;
