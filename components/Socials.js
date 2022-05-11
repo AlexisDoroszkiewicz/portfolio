@@ -7,10 +7,10 @@ export default function Socials() {
 	return (
 		<SocialsContainer>
 			<a>
-				<Linkedin />
+				<GitHub />
 			</a>
 			<a>
-				<GitHub />
+				<Linkedin />
 			</a>
 			<a>
 				<Twitter />
@@ -20,6 +20,7 @@ export default function Socials() {
 }
 
 const SocialsContainer = styled.div`
+	width: 2rem;
 	svg {
 		max-width: 2rem;
 		aspect-ratio: 1 / 1;
