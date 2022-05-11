@@ -30,6 +30,10 @@ export default function ProjectCard({ project, index }) {
 						},
 					}
 				);
+
+				return () => {
+					content.current.removeAttribute("style");
+				};
 			},
 		});
 	}, []);
