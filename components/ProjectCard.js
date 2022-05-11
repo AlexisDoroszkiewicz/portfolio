@@ -61,7 +61,6 @@ export default function ProjectCard({ project, index }) {
 						placeholder="blur"
 						blurDataURL={img.blurUpThumb}
 						layout="responsive"
-						priority
 					/>
 				</ImgWrap>
 			</a>
