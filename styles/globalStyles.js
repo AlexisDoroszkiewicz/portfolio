@@ -23,6 +23,12 @@ export const globalStyles = (
 				font-family: "Roboto", sans-serif;
 				font-size: var(--step-0);
 			}
+			h1,
+			h2,
+			h3 {
+				font-family: "Source Sans Pro", sans-serif;
+				font-weight: 600;
+			}
 			h1 {
 				font-size: var(--step-4);
 			}
@@ -50,6 +56,25 @@ export const globalStyles = (
 			}
 			strong {
 				color: rgb(237, 87, 237);
+			}
+			/* width */
+			::-webkit-scrollbar {
+				width: 8px;
+			}
+
+			/* Track */
+			::-webkit-scrollbar-track {
+				background: #f1f1f1;
+			}
+
+			/* Handle */
+			::-webkit-scrollbar-thumb {
+				background: rgba(99, 80, 96, 0.6);
+			}
+
+			/* Handle on hover */
+			::-webkit-scrollbar-thumb:hover {
+				background: #555;
 			}
 		`}
 	/>
