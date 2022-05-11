@@ -7,31 +7,30 @@ import { useEffect, useRef } from "react";
 
 export default function ProjectList({ allProjects }) {
 	const h2ref = useRef();
+	const underline = useRef();
+	const tl = useRef();
 
 	useEffect(() => {
-		ScrollTrigger.matchMedia({
-			"(min-width: 750px)": function () {
-				gsap.fromTo(
-					h2ref.current,
-					{
-						yPercent: 100,
-					},
-					{
-						yPercent: 0,
-						ease: "none",
-						scrollTrigger: {
-							trigger: h2ref.current,
-							scrub: 1,
-							end: "bottom 50",
-						},
-					}
-				);
-			},
-		});
+		tl.current = gsap
+			.timeline({
+				scrollTrigger: {
+					trigger: h2ref.current,
+					start: "top bottom",
+					end: "top center",
+					scrub: 1,
+				},
+			})
+			.fromTo(h2ref.current, { width: "0%" }, { width: "100%" })
+			.fromTo(underline.current, { width: "0%" }, { width: "100%" });
 	}, []);
 	return (
 		<Section>
-			<H2 ref={h2ref}>Latest Work</H2>
+			<H2>
+				<div ref={h2ref}>
+					Latest Work
+					<Underline ref={underline} />
+				</div>
+			</H2>
 			<Flex>
 				{allProjects.map((project, index) => (
 					<ProjectCard
@@ -51,6 +50,17 @@ const Section = styled.section`
 
 const H2 = styled.h2`
 	width: fit-content;
+	position: relative;
+	div {
+		overflow: hidden;
+		white-space: nowrap;
+	}
+`;
+
+const Underline = styled.div`
+	position: absolute;
+	height: 1px;
+	background-color: var(--grey);
 `;
 
 const Flex = styled.div`
