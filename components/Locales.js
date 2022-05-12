@@ -8,10 +8,14 @@ export default function Locales() {
 	return (
 		<Flex>
 			<Link href={"/"} locale="fr">
-				<A isCurrent={locale == "fr"}>FR</A>
+				<a>
+					<P isCurrent={locale == "fr"}>FR</P>
+				</a>
 			</Link>
 			<Link href={"/en"} locale="en">
-				<A isCurrent={locale == "en"}>EN</A>
+				<a>
+					<P isCurrent={locale == "en"}>EN</P>
+				</a>
 			</Link>
 		</Flex>
 	);
@@ -19,6 +23,10 @@ export default function Locales() {
 
 const Flex = styled.div`
 	display: flex;
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
 	a:first-of-type {
 		padding-right: 0.5rem;
 		border-right: 2px solid var(--greyDark);
@@ -28,7 +36,7 @@ const Flex = styled.div`
 	}
 `;
 
-const A = styled.a`
+const P = styled.p`
 	color: ${({ isCurrent }) => (isCurrent ? "var(--accent)" : "inherit")};
 	cursor: pointer;
 `;
