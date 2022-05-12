@@ -63,11 +63,12 @@ const Dot = styled.div`
 	border-radius: 50%;
 	box-shadow: 0px 0px 4em 0.4em rgb(237, 87, 237);
 	position: relative;
+	opacity: 0;
 `;
 
 const Line = styled.div`
 	background-color: var(--accent);
-	width: 100%;
+	width: 0%;
 	height: 1px;
 	transform: translateY(-50%) translateX(0.25rem);
 	position: absolute;
@@ -83,6 +84,7 @@ const EventCard = styled.div`
 	left: 0;
 	transform: translateY(-100%) translateX(-40%);
 	text-align: center;
+	opacity: 0;
 `;
 
 const EventKey = styled.p``;
