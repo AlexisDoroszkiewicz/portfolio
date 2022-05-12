@@ -27,7 +27,7 @@ export default function ProjectList({ allProjects }) {
 		<Section>
 			<H2>
 				<div ref={h2ref}>
-					Latest Work
+					Latest Integrations
 					<Underline ref={underline} />
 				</div>
 			</H2>
