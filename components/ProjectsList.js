@@ -72,7 +72,7 @@ const Flex = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 8rem;
-	margin-top: 6rem;
+	margin-top: 4rem;
 	@media (max-width: 750px) {
 		gap: 4rem;
 	}
