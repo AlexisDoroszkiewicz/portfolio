@@ -94,5 +94,4 @@ const EventKey = styled.p``;
 const EventDate = styled.p`
 	font-size: var(--step--2);
 	color: var(--accent);
-	background: whitesmoke;
 `;
