@@ -13,17 +13,17 @@ export default function Timeline({ timeline }) {
 			q(".eventCard"),
 			{ opacity: 0 },
 			{ opacity: 1, duration: 1, stagger: 1 }
-		);
+		).delay(1);
 		gsap.fromTo(
 			q(".dot"),
 			{ opacity: 0 },
 			{ opacity: 1, duration: 0.25, stagger: 1 }
-		);
+		).delay(1);
 		gsap.fromTo(
 			q(".line"),
 			{ width: 0 },
 			{ width: "100%", duration: 1, stagger: 1, ease: "none" }
-		);
+		).delay(1);
 	}, [locale]);
 
 	return (
@@ -76,6 +76,7 @@ const Line = styled.div`
 	position: absolute;
 	top: 50%;
 	left: 0;
+	opacity: 0.8;
 `;
 
 const EventCard = styled.div`
