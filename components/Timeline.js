@@ -19,13 +19,13 @@ export default function Timeline({ timeline }) {
 			if (index == cards.length - 1) {
 				tl.current = gsap
 					.timeline()
-					.delay(index + 1)
+					.delay(index + 1.5)
 					.fromTo(card, { opacity: 0 }, { opacity: 1 })
 					.fromTo(dots[index], { opacity: 0 }, { opacity: 1 }, "<");
 			} else {
 				tl.current = gsap
 					.timeline()
-					.delay(index + 1)
+					.delay(index + 1.5)
 					.fromTo(card, { opacity: 0 }, { opacity: 1 })
 					.fromTo(dots[index], { opacity: 0 }, { opacity: 1 }, "<")
 					.fromTo(line[index], { width: 0 }, { width: "100%" });
