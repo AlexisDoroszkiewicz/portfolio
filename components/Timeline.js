@@ -50,7 +50,7 @@ const TimelineContainer = styled.div`
 `;
 
 const Event = styled.div`
-	transform: translateX(50%);
+	transform: translateX(calc(50% - 0.25rem));
 	width: 100%;
 `;
 

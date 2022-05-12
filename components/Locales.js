@@ -7,10 +7,10 @@ export default function Locales() {
 
 	return (
 		<Flex>
-			<Link href={asPath} locale="fr">
+			<Link href={"/"} locale="fr">
 				<A isCurrent={locale == "fr"}>FR</A>
 			</Link>
-			<Link href={asPath} locale="en">
+			<Link href={"/en"} locale="en">
 				<A isCurrent={locale == "en"}>EN</A>
 			</Link>
 		</Flex>
