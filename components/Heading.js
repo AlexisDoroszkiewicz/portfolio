@@ -22,7 +22,6 @@ export default function Heading({ heading }) {
 			{heading.split(/\n/).map((line, index) => (
 				<div key={index} className="hwrap">
 					<div className="htext">
-						{line}
 						<ReactMarkdown>{line}</ReactMarkdown>
 					</div>
 				</div>
