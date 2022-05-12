@@ -4,11 +4,12 @@ import Head from "next/head";
 import styled from "@emotion/styled";
 import ProjectList from "@components/ProjectsList";
 import Footer from "@components/Footer";
+import Locales from "@components/Locales";
 
 // data
-export async function getStaticProps() {
-	const home = await getHomeData();
-	const allProjects = await getAllProjects();
+export async function getStaticProps(context) {
+	const home = await getHomeData(context);
+	const allProjects = await getAllProjects(context);
 
 	return {
 		props: { home, allProjects },
@@ -21,7 +22,7 @@ export default function Home({ home, allProjects }) {
 		<>
 			<Head>{renderMetaTags(home._seoMetaTags)}</Head>
 			<header></header>
-
+			<Locales />
 			<Intro>
 				<H1>{home.pageTitle}</H1>
 			</Intro>

@@ -4,11 +4,14 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 import { useEffect, useRef } from "react";
+import { useRouter } from "next/router";
 
 export default function ProjectList({ allProjects }) {
 	const h2ref = useRef();
 	const underline = useRef();
 	const tl = useRef();
+
+	const { locale } = useRouter();
 
 	useEffect(() => {
 		tl.current = gsap
@@ -27,7 +30,9 @@ export default function ProjectList({ allProjects }) {
 		<Section>
 			<H2>
 				<div ref={h2ref}>
-					Latest Integrations
+					{locale == "fr"
+						? "Dernières Intégrations"
+						: "Latest Integrations"}
 					<Underline ref={underline} />
 				</div>
 			</H2>
