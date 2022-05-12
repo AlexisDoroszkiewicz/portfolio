@@ -8,22 +8,21 @@ export default function Timeline({ timeline }) {
 	const q = gsap.utils.selector(el);
 	const { locale } = useRouter();
 
+	const tl = useRef();
+
 	useEffect(() => {
-		gsap.fromTo(
-			q(".eventCard"),
-			{ opacity: 0 },
-			{ opacity: 1, duration: 0.75, stagger: 0.75 }
-		).delay(1);
-		gsap.fromTo(
-			q(".dot"),
-			{ opacity: 0 },
-			{ opacity: 1, duration: 0.25, stagger: 0.75 }
-		).delay(1);
-		gsap.fromTo(
-			q(".line"),
-			{ width: 0 },
-			{ width: "100%", duration: 0.75, stagger: 0.75 }
-		).delay(1);
+		const cards = q(".eventCard");
+		const dots = q(".dot");
+		const line = q(".line");
+
+		cards.map((card, index) => {
+			tl.current = gsap
+				.timeline()
+				.delay(index)
+				.fromTo(card, { opacity: 0 }, { opacity: 1 })
+				.fromTo(dots[index], { opacity: 0 }, { opacity: 1 }, "<")
+				.fromTo(line[index], { width: 0 }, { width: "100%" });
+		});
 	}, [locale]);
 
 	return (
@@ -47,6 +46,8 @@ export default function Timeline({ timeline }) {
 const TimelineContainer = styled.div`
 	display: flex;
 	justify-content: space-around;
+	@media (max-width: 760px) {
+	}
 `;
 
 const Event = styled.div`
@@ -84,7 +85,7 @@ const Line = styled.div`
 `;
 
 const EventCard = styled.div`
-	width: fit-content;
+	width: max-content;
 	font-size: var(--step--1);
 	position: absolute;
 	top: 0;
@@ -92,6 +93,8 @@ const EventCard = styled.div`
 	transform: translateY(-110%) translateX(calc(-50% + 0.25rem));
 	text-align: center;
 	opacity: 0;
+	@media (max-width: 760px) {
+	}
 `;
 
 const EventKey = styled.p`
