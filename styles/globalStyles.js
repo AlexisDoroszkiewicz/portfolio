@@ -12,6 +12,7 @@ export const globalStyles = (
 				--border: 1px solid var(--grey);
 				--accent: rgb(237, 87, 237);
 				--accentAlpha: rgba(237, 87, 237, 0.03);
+				--fontColor: rgb(35, 20, 35);
 
 				--step--2: clamp(0.61rem, calc(0.58rem + 0.16vw), 0.72rem);
 				--step--1: clamp(0.73rem, calc(0.68rem + 0.24vw), 0.9rem);
@@ -26,12 +27,13 @@ export const globalStyles = (
 				font-family: "Roboto", sans-serif;
 				font-size: var(--step-0);
 				overflow-x: hidden;
+				color: var(--fontColor);
 			}
 			h1,
 			h2,
 			h3 {
-				font-family: "Source Sans Pro", sans-serif;
-				font-weight: 600;
+				font-family: "Montserrat", sans-serif;
+				${"" /* font-weight: 600; */}
 			}
 			h1 {
 				font-size: var(--step-4);
