@@ -6,6 +6,7 @@ import ProjectList from "@components/ProjectsList";
 import Footer from "@components/Footer";
 import Navigation from "@components/Navigation";
 import Timeline from "@components/Timeline";
+import Heading from "@components/Heading";
 
 // data
 export async function getStaticProps(context) {
@@ -26,7 +27,7 @@ export default function Home({ home, allProjects, timeline }) {
 			<header></header>
 			<Navigation />
 			<Intro>
-				<H1>{home.pageTitle}</H1>
+				<Heading heading={home.pageTitle} />
 				<Timeline timeline={timeline.keyDate} />
 			</Intro>
 			<Main>
@@ -51,8 +52,4 @@ const Main = styled.main`
 	padding-inline: 5vw;
 	max-width: 1200px;
 	margin-inline: auto;
-`;
-
-const H1 = styled.h1`
-	white-space: pre-line;
 `;
