@@ -4,7 +4,7 @@ import Head from "next/head";
 import styled from "@emotion/styled";
 import ProjectList from "@components/ProjectsList";
 import Footer from "@components/Footer";
-import Locales from "@components/Locales";
+import Navigation from "@components/Navigation";
 
 // data
 export async function getStaticProps(context) {
@@ -22,7 +22,7 @@ export default function Home({ home, allProjects }) {
 		<>
 			<Head>{renderMetaTags(home._seoMetaTags)}</Head>
 			<header></header>
-			<Locales />
+			<Navigation />
 			<Intro>
 				<H1>{home.pageTitle}</H1>
 			</Intro>
