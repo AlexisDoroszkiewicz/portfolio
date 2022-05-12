@@ -1,23 +1,25 @@
-import { getAllProjects, getHomeData } from "@lib/datocms";
+import { getAllProjects, getHomeData, getTimeline } from "@lib/datocms";
 import { renderMetaTags } from "react-datocms";
 import Head from "next/head";
 import styled from "@emotion/styled";
 import ProjectList from "@components/ProjectsList";
 import Footer from "@components/Footer";
 import Navigation from "@components/Navigation";
+import Timeline from "@components/Timeline";
 
 // data
 export async function getStaticProps(context) {
 	const home = await getHomeData(context);
 	const allProjects = await getAllProjects(context);
+	const { timeline } = await getTimeline(context);
 
 	return {
-		props: { home, allProjects },
+		props: { home, allProjects, timeline },
 	};
 }
 
 // component
-export default function Home({ home, allProjects }) {
+export default function Home({ home, allProjects, timeline }) {
 	return (
 		<>
 			<Head>{renderMetaTags(home._seoMetaTags)}</Head>
@@ -25,6 +27,7 @@ export default function Home({ home, allProjects }) {
 			<Navigation />
 			<Intro>
 				<H1>{home.pageTitle}</H1>
+				<Timeline tl={timeline} />
 			</Intro>
 			<Main>
 				<ProjectList allProjects={allProjects} />
