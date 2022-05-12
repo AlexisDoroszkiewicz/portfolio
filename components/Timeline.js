@@ -8,6 +8,11 @@ export default function Timeline({ timeline }) {
 
 	useEffect(() => {
 		gsap.fromTo(
+			q(".eventCard"),
+			{ opacity: 0 },
+			{ opacity: 1, duration: 1, stagger: 1.25 }
+		);
+		gsap.fromTo(
 			q(".dot"),
 			{ opacity: 0 },
 			{ opacity: 1, duration: 0.25, stagger: 1.25 }
@@ -25,7 +30,7 @@ export default function Timeline({ timeline }) {
 				<Event key={event.id}>
 					<div>
 						<Dot className="dot" />
-						<EventCard>
+						<EventCard className="eventCard">
 							<EventKey>{event.key}</EventKey>
 							<EventDate as={"date"}>{event.date}</EventDate>
 						</EventCard>
@@ -76,7 +81,7 @@ const EventCard = styled.div`
 	position: absolute;
 	top: 0;
 	left: 0;
-	transform: translateY(-100%) translateX(-50%);
+	transform: translateY(-100%) translateX(-40%);
 	text-align: center;
 `;
 
