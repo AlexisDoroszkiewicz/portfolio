@@ -26,6 +26,7 @@ const Flex = styled.div`
 	a {
 		text-decoration: none;
 		color: inherit;
+		font-weight: 500;
 	}
 	a:first-of-type {
 		padding-right: 0.5rem;
