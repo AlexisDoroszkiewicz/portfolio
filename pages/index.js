@@ -27,7 +27,7 @@ export default function Home({ home, allProjects, timeline }) {
 			<Navigation />
 			<Intro>
 				<H1>{home.pageTitle}</H1>
-				<Timeline tl={timeline} />
+				<Timeline timeline={timeline.keyDate} />
 			</Intro>
 			<Main>
 				<ProjectList allProjects={allProjects} />
@@ -44,7 +44,7 @@ const Intro = styled.section`
 	margin-inline: auto;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-evenly;
 `;
 
 const Main = styled.main`

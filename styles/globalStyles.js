@@ -25,6 +25,7 @@ export const globalStyles = (
 			html {
 				font-family: "Roboto", sans-serif;
 				font-size: var(--step-0);
+				overflow-x: hidden;
 			}
 			h1,
 			h2,
