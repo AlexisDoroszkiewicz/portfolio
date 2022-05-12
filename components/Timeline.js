@@ -10,17 +10,17 @@ export default function Timeline({ timeline }) {
 		gsap.fromTo(
 			q(".eventCard"),
 			{ opacity: 0 },
-			{ opacity: 1, duration: 1, stagger: 1.25 }
+			{ opacity: 1, duration: 1, stagger: 1 }
 		);
 		gsap.fromTo(
 			q(".dot"),
 			{ opacity: 0 },
-			{ opacity: 1, duration: 0.25, stagger: 1.25 }
+			{ opacity: 1, duration: 0.25, stagger: 1 }
 		);
 		gsap.fromTo(
 			q(".line"),
 			{ width: 0 },
-			{ width: "100%", duration: 1, stagger: 1.25, ease: "sine.out" }
+			{ width: "100%", duration: 1, stagger: 1, ease: "sine.out" }
 		);
 	}, []);
 
