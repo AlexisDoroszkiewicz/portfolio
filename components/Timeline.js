@@ -76,7 +76,8 @@ const Line = styled.div`
 	position: absolute;
 	top: 50%;
 	left: 0;
-	opacity: 0.8;
+	opacity: 0.4;
+	box-shadow: 0px 0px 2px 0 rgb(237, 87, 237);
 `;
 
 const EventCard = styled.div`
