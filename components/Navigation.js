@@ -12,7 +12,12 @@ export default function Navigation() {
 const Nav = styled.nav`
 	padding-inline: 5vw;
 	max-width: 1200px;
-	margin-inline: auto;
+	position: absolute;
+	top: 0;
+	left: 0%;
+	right: 0;
+	margin: 0 auto;
+	padding-block: 1em;
 	display: flex;
 	justify-content: flex-end;
 `;
