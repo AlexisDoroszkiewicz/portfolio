@@ -20,7 +20,7 @@ export default function Timeline({ timeline }) {
 		gsap.fromTo(
 			q(".line"),
 			{ width: 0 },
-			{ width: "100%", duration: 1, stagger: 1, ease: "sine.out" }
+			{ width: "100%", duration: 1, stagger: 1, ease: "none" }
 		);
 	}, []);
 
