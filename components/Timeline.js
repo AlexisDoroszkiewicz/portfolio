@@ -23,13 +23,13 @@ export default function Timeline({ timeline }) {
 		<TimelineContainer ref={el}>
 			{timeline.map((event, index) => (
 				<Event key={event.id}>
-					<DotContainer>
+					<div>
 						<Dot className="dot" />
 						<EventCard>
 							<EventKey>{event.key}</EventKey>
 							<EventDate as={"date"}>{event.date}</EventDate>
 						</EventCard>
-					</DotContainer>
+					</div>
 					{index < timeline.length - 1 && <Line className="line" />}
 				</Event>
 			))}
@@ -45,10 +45,6 @@ const TimelineContainer = styled.div`
 const Event = styled.div`
 	transform: translateX(50%);
 	width: 100%;
-`;
-
-const DotContainer = styled.div`
-	position: relative;
 `;
 
 const Dot = styled.div`
