@@ -19,7 +19,7 @@ export default function ProjectList({ allProjects }) {
 				scrollTrigger: {
 					trigger: h2ref.current,
 					start: "top bottom",
-					end: "top center",
+					end: "top 25%",
 					scrub: 1,
 				},
 			})
