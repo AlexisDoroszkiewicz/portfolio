@@ -49,9 +49,7 @@ export default function ProjectList({ allProjects }) {
 	);
 }
 
-const Section = styled.section`
-	margin-block: 4rem;
-`;
+const Section = styled.section``;
 
 const H2 = styled.h2`
 	width: fit-content;
