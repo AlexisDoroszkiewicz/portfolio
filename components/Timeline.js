@@ -1,16 +1,38 @@
 import styled from "@emotion/styled";
+import { gsap } from "gsap";
+import { useEffect, useRef } from "react";
 
 export default function Timeline({ timeline }) {
+	const el = useRef();
+	const q = gsap.utils.selector(el);
+
+	useEffect(() => {
+		gsap.fromTo(
+			q(".dot"),
+			{ opacity: 0 },
+			{ opacity: 1, duration: 0.25, stagger: 1.25 }
+		);
+		gsap.fromTo(
+			q(".line"),
+			{ width: 0 },
+			{ width: "100%", duration: 1, stagger: 1.25, ease: "sine.out" }
+		);
+	}, []);
+
 	return (
-		<TimelineContainer>
+		<TimelineContainer ref={el}>
 			{timeline.map((event, index) => (
-				<Event>
-					<Dot />
-					{index < timeline.length - 1 && <Line />}
-					<EventCard key={event.id}>
+				<Event key={event.id}>
+					<EventCard>
 						<EventKey>{event.key}</EventKey>
 						<EventDate as={"date"}>{event.date}</EventDate>
 					</EventCard>
+					<DotLineContainer>
+						<Dot className="dot" />
+						{index < timeline.length - 1 && (
+							<Line className="line" />
+						)}
+					</DotLineContainer>
 				</Event>
 			))}
 		</TimelineContainer>
@@ -23,9 +45,12 @@ const TimelineContainer = styled.div`
 `;
 
 const Event = styled.div`
-	position: relative;
 	transform: translateX(50%);
 	width: 100%;
+`;
+
+const DotLineContainer = styled.div`
+	position: relative;
 `;
 
 const Dot = styled.div`
@@ -44,22 +69,19 @@ const Line = styled.div`
 	background-color: var(--accent);
 	width: 100%;
 	height: 1px;
-	transform: translateY(-50%);
+	transform: translateY(-50%) translateX(0.25rem);
 	position: absolute;
 	top: 50%;
 	left: 0;
 `;
 
 const EventCard = styled.div`
-	background-color: white;
-	border-radius: var(--radius);
-	border: var(--border);
-	padding: 0.5em 1em;
 	width: fit-content;
 	font-size: var(--step--1);
-	box-shadow: var(--shadow);
 	position: absolute;
-	opacity: 0;
+	top: 0;
+	left: 0;
+	transform: translateY(-100%);
 `;
 
 const EventKey = styled.p``;
