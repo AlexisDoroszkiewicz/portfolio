@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 export default function Timeline({ timeline }) {
 	const el = useRef();
 	const q = gsap.utils.selector(el);
-	console.log(useRouter());
+	const { locale } = useRouter();
 
 	useEffect(() => {
 		gsap.fromTo(
@@ -24,7 +24,7 @@ export default function Timeline({ timeline }) {
 			{ width: 0 },
 			{ width: "100%", duration: 1, stagger: 1, ease: "none" }
 		);
-	}, []);
+	}, [locale]);
 
 	return (
 		<TimelineContainer ref={el}>
