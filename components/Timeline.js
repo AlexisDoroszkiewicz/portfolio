@@ -90,7 +90,9 @@ const EventCard = styled.div`
 	opacity: 0;
 `;
 
-const EventKey = styled.p``;
+const EventKey = styled.p`
+	font-weight: 500;
+`;
 
 const EventDate = styled.p`
 	font-size: var(--step--2);
