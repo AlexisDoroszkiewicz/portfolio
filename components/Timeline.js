@@ -1,10 +1,12 @@
 import styled from "@emotion/styled";
 import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
+import { useRouter } from "next/router";
 
 export default function Timeline({ timeline }) {
 	const el = useRef();
 	const q = gsap.utils.selector(el);
+	console.log(useRouter());
 
 	useEffect(() => {
 		gsap.fromTo(
@@ -32,7 +34,7 @@ export default function Timeline({ timeline }) {
 						<Dot className="dot" />
 						<EventCard className="eventCard">
 							<EventKey>{event.key}</EventKey>
-							<EventDate as={"date"}>{event.date}</EventDate>
+							<EventDate>{event.date}</EventDate>
 						</EventCard>
 					</div>
 					{index < timeline.length - 1 && <Line className="line" />}
