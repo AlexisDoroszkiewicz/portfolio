@@ -66,6 +66,7 @@ const Underline = styled.div`
 	position: absolute;
 	height: 1px;
 	background-color: var(--grey);
+	box-shadow: 0px 0px 2px 0 rgb(237, 87, 237, 0.2);
 `;
 
 const Flex = styled.div`
