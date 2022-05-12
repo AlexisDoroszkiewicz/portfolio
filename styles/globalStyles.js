@@ -75,7 +75,7 @@ export const globalStyles = (
 
 			/* Handle */
 			::-webkit-scrollbar-thumb {
-				background: var(--grey);
+				background: var(--accent);
 			}
 
 			/* Handle on hover */
