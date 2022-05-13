@@ -65,7 +65,7 @@ export const globalStyles = (
 			}
 			/* width */
 			::-webkit-scrollbar {
-				width: 4px;
+				width: 10px;
 			}
 
 			/* Track */
