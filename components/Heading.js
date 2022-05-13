@@ -29,9 +29,9 @@ export default function Heading({ heading }) {
 			}
 		);
 
-		rows.map((row) => {
+		rows.map((row, index) => {
 			let hover = gsap.to(row, {
-				skewX: "+=10",
+				skewX: index % 2 == 0 ? "+=10" : "-=10",
 				x: "+=0.5ch",
 				duration: 0.25,
 				paused: true,

@@ -51,7 +51,7 @@ export default function Timeline({ timeline }) {
 
 		cards.map((card) => {
 			let hover = gsap.to(card, {
-				scale: 1.15,
+				scale: 1.1,
 				y: "-=50%",
 				duration: 0.25,
 				paused: true,
