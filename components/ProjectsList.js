@@ -19,12 +19,17 @@ export default function ProjectList({ allProjects }) {
 				scrollTrigger: {
 					trigger: h2ref.current,
 					start: "bottom bottom",
-					end: "top 15%",
+					end: "top 10%",
 					scrub: 1,
 				},
 			})
 			.fromTo(h2ref.current, { width: "0%" }, { width: "100%" })
-			.fromTo(underline.current, { width: "0%" }, { width: "100%" });
+			.fromTo(
+				underline.current,
+				{ width: "0%" },
+				{ width: "100%" },
+				"<25%"
+			);
 	}, []);
 	return (
 		<Section>
