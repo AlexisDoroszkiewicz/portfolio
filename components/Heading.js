@@ -10,11 +10,36 @@ export default function Heading({ heading }) {
 	const q = gsap.utils.selector(el);
 
 	useEffect(() => {
+		const rows = q(".htext");
+
 		gsap.fromTo(
 			q(".htext"),
 			{ y: "100%" },
-			{ y: "0%", duration: 0.5, stagger: 0.25 }
+			{
+				y: "0%",
+				duration: 0.5,
+				stagger: 0.25,
+				onComplete: () => {
+					Object.values(document.querySelectorAll(".hwrap")).map(
+						(item) => {
+							item.style.overflow = "visible";
+						}
+					);
+				},
+			}
 		);
+
+		rows.map((row) => {
+			let hover = gsap.to(row, {
+				skewX: "+=15",
+				x: "+=0.5ch",
+				duration: 0.25,
+				paused: true,
+				ease: "sine.out",
+			});
+			row.addEventListener("mouseenter", () => hover.play());
+			row.addEventListener("mouseleave", () => hover.reverse());
+		});
 	}, [locale]);
 
 	return (
