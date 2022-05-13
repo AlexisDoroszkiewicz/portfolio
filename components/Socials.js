@@ -1,5 +1,5 @@
 import Linkedin from "@components/Linkedin";
-import GitHub from "@components/GitHub";
+import GitHub from "@components/Github";
 import Twitter from "@components/Twitter";
 import styled from "@emotion/styled";
 
