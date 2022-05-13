@@ -53,10 +53,12 @@ export default function Timeline({ timeline }) {
 			if (window.innerWidth < 760) {
 				lines.map((line) => {
 					line.style.width = "1px";
+					line.style.height = "3.5em";
 				});
 			} else {
 				lines.map((line) => {
 					line.style.width = "100%";
+					line.style.height = "1px";
 				});
 			}
 		};
@@ -120,7 +122,7 @@ const Dot = styled.div`
 	);
 	border-radius: 50%;
 	box-shadow: 0px 0px 4em 0.4em rgb(237, 87, 237);
-	opacity: 1;
+	opacity: 0;
 `;
 
 const Line = styled.div`
@@ -148,7 +150,7 @@ const EventCard = styled.div`
 	left: 0;
 	transform: translateY(-110%) translateX(calc(-50% + 0.25rem));
 	text-align: center;
-	opacity: 1;
+	opacity: 0;
 	@media (max-width: 760px) {
 		text-align: left;
 		transform: translateY(-50%) translateX(2em);
