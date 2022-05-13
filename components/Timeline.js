@@ -96,7 +96,7 @@ const TimelineContainer = styled.div`
 		width: fit-content;
 		gap: 3em;
 		align-self: center;
-		transform: translateX(-4em);
+		transform: translateX(5em);
 	}
 `;
 
@@ -144,7 +144,6 @@ const Line = styled.div`
 
 const EventCard = styled.div`
 	width: max-content;
-	font-size: var(--step--1);
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -159,9 +158,16 @@ const EventCard = styled.div`
 
 const EventKey = styled.p`
 	font-weight: 500;
+	font-size: var(--step--1);
+	@media (max-width: 760px) {
+		font-size: var(--step-0);
+	}
 `;
 
 const EventDate = styled.p`
 	font-size: var(--step--2);
 	color: var(--accent);
+	@media (max-width: 760px) {
+		font-size: var(--step--1);
+	}
 `;
