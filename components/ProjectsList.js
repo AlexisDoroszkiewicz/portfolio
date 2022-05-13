@@ -18,7 +18,7 @@ export default function ProjectList({ allProjects }) {
 			.timeline({
 				scrollTrigger: {
 					trigger: h2ref.current,
-					start: "top bottom",
+					start: "bottom bottom",
 					end: "top 15%",
 					scrub: 1,
 				},
