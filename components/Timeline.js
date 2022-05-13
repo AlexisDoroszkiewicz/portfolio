@@ -64,6 +64,7 @@ export default function Timeline({ timeline }) {
 		window.addEventListener("resize", handleResize);
 		return () => {
 			window.removeEventListener("resize", handleResize);
+			tl.current.kill();
 		};
 	}, [locale]);
 
