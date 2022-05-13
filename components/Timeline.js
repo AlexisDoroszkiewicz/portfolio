@@ -7,24 +7,64 @@ export default function Timeline({ timeline }) {
 	const el = useRef();
 	const q = gsap.utils.selector(el);
 	const { locale } = useRouter();
-
 	const tl = useRef();
 
 	useEffect(() => {
 		const cards = q(".eventCard");
 		const dots = q(".dot");
-		const line = q(".line");
+		const lines = q(".line");
 
-		cards.map((card, index) => {
-			tl.current = gsap
-				.timeline()
-				.delay(index + 1.5)
-				.fromTo(card, { opacity: 0 }, { opacity: 1 })
-				.fromTo(dots[index], { opacity: 0 }, { opacity: 1 }, "<");
-			index != cards.length - 1 &&
-				tl.current.fromTo(line[index], { width: 0 }, { width: "100%" });
-			tl.current.timeScale(1.25);
-		});
+		// mobile animation
+		if (window.matchMedia("(max-width: 760px)").matches) {
+			cards.map((card, index) => {
+				tl.current = gsap
+					.timeline()
+					.delay(index + 1.5)
+					.fromTo(card, { opacity: 0 }, { opacity: 1 })
+					.fromTo(dots[index], { opacity: 0 }, { opacity: 1 }, "<");
+				index != cards.length - 1 &&
+					tl.current.fromTo(
+						lines[index],
+						{ height: 0 },
+						{ height: "3.5em" }
+					);
+				tl.current.timeScale(1.25);
+			});
+		}
+		// desktop animation
+		else {
+			cards.map((card, index) => {
+				tl.current = gsap
+					.timeline()
+					.delay(index + 1.5)
+					.fromTo(card, { opacity: 0 }, { opacity: 1 })
+					.fromTo(dots[index], { opacity: 0 }, { opacity: 1 }, "<");
+				index != cards.length - 1 &&
+					tl.current.fromTo(
+						lines[index],
+						{ width: 0 },
+						{ width: "100%" }
+					);
+				tl.current.timeScale(1.25);
+			});
+		}
+
+		const handleResize = () => {
+			if (window.innerWidth < 760) {
+				lines.map((line) => {
+					line.style.width = "1px";
+				});
+			} else {
+				lines.map((line) => {
+					line.style.width = "100%";
+				});
+			}
+		};
+
+		window.addEventListener("resize", handleResize);
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
 	}, [locale]);
 
 	return (
@@ -49,12 +89,20 @@ const TimelineContainer = styled.div`
 	display: flex;
 	justify-content: space-around;
 	@media (max-width: 760px) {
+		flex-direction: column;
+		width: fit-content;
+		gap: 3em;
+		align-self: center;
+		transform: translateX(-4em);
 	}
 `;
 
 const Event = styled.div`
 	transform: translateX(calc(50% - 0.25rem));
 	width: 100%;
+	@media (max-width: 760px) {
+		width: fit-content;
+	}
 `;
 
 const Relative = styled.div`
@@ -71,7 +119,7 @@ const Dot = styled.div`
 	);
 	border-radius: 50%;
 	box-shadow: 0px 0px 4em 0.4em rgb(237, 87, 237);
-	opacity: 0;
+	opacity: 1;
 `;
 
 const Line = styled.div`
@@ -84,6 +132,11 @@ const Line = styled.div`
 	left: 0;
 	opacity: 0.4;
 	box-shadow: 0px 0px 2px 0 rgb(237, 87, 237);
+	@media (max-width: 760px) {
+		height: 3.5em;
+		width: 1px;
+		transform: translateX(0.25em);
+	}
 `;
 
 const EventCard = styled.div`
@@ -94,8 +147,10 @@ const EventCard = styled.div`
 	left: 0;
 	transform: translateY(-110%) translateX(calc(-50% + 0.25rem));
 	text-align: center;
-	opacity: 0;
+	opacity: 1;
 	@media (max-width: 760px) {
+		text-align: left;
+		transform: translateY(-50%) translateX(2em);
 	}
 `;
 
