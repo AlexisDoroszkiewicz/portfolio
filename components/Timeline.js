@@ -49,6 +49,18 @@ export default function Timeline({ timeline }) {
 			});
 		}
 
+		cards.map((card) => {
+			let hover = gsap.to(card, {
+				scale: 1.15,
+				y: "-=50%",
+				duration: 0.25,
+				paused: true,
+				ease: "sine.out",
+			});
+			card.addEventListener("mouseenter", () => hover.play());
+			card.addEventListener("mouseleave", () => hover.reverse());
+		});
+
 		const handleResize = () => {
 			if (window.innerWidth < 760) {
 				lines.map((line) => {
@@ -143,6 +155,7 @@ const Line = styled.div`
 `;
 
 const EventCard = styled.div`
+	cursor: default;
 	width: max-content;
 	position: absolute;
 	top: 0;
