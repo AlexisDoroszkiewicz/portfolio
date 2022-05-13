@@ -16,20 +16,14 @@ export default function Timeline({ timeline }) {
 		const line = q(".line");
 
 		cards.map((card, index) => {
-			if (index == cards.length - 1) {
-				tl.current = gsap
-					.timeline()
-					.delay(index + 1.5)
-					.fromTo(card, { opacity: 0 }, { opacity: 1 })
-					.fromTo(dots[index], { opacity: 0 }, { opacity: 1 }, "<");
-			} else {
-				tl.current = gsap
-					.timeline()
-					.delay(index + 1.5)
-					.fromTo(card, { opacity: 0 }, { opacity: 1 })
-					.fromTo(dots[index], { opacity: 0 }, { opacity: 1 }, "<")
-					.fromTo(line[index], { width: 0 }, { width: "100%" });
-			}
+			tl.current = gsap
+				.timeline()
+				.delay(index + 1.5)
+				.fromTo(card, { opacity: 0 }, { opacity: 1 })
+				.fromTo(dots[index], { opacity: 0 }, { opacity: 1 }, "<");
+			index != cards.length - 1 &&
+				tl.current.fromTo(line[index], { width: 0 }, { width: "100%" });
+			tl.current.timeScale(1.25);
 		});
 	}, [locale]);
 
