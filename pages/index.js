@@ -30,6 +30,7 @@ export default function Home({ home, allProjects, timeline }) {
 				<Heading heading={home.pageTitle} />
 				<Timeline timeline={timeline.keyDate} />
 			</Intro>
+
 			<Main>
 				<ProjectList allProjects={allProjects} />
 			</Main>
