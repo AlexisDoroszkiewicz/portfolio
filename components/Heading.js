@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { useRef, useEffect } from "react";
 import { useRouter } from "next/router";
 import ReactMarkdown from "react-markdown";
+import hoverSkew from "@lib/hoverSkew";
 
 export default function Heading({ heading }) {
 	const { locale } = useRouter();
@@ -30,15 +31,7 @@ export default function Heading({ heading }) {
 		);
 
 		rows.map((row, index) => {
-			let hover = gsap.to(row, {
-				skewX: index % 2 == 0 ? "+=10" : "-=10",
-				x: "+=0.5ch",
-				duration: 0.25,
-				paused: true,
-				ease: "sine.out",
-			});
-			row.addEventListener("mouseenter", () => hover.play());
-			row.addEventListener("mouseleave", () => hover.reverse());
+			hoverSkew(row, index);
 		});
 
 		return () => {

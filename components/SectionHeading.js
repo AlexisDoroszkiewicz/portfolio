@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 import { useEffect, useRef } from "react";
+import hoverSkew from "@lib/hoverSkew";
 
 export default function SectionHeading({ children }) {
 	const h2ref = useRef();
@@ -26,6 +27,8 @@ export default function SectionHeading({ children }) {
 				{ width: "100%" },
 				"<25%"
 			);
+
+		hoverSkew(h2ref.current);
 	}, []);
 	return (
 		<H2>
@@ -40,14 +43,13 @@ export default function SectionHeading({ children }) {
 const H2 = styled.h2`
 	width: fit-content;
 	position: relative;
-	div {
+	& > div {
 		overflow: hidden;
 		white-space: nowrap;
 	}
 `;
 
 const Underline = styled.div`
-	position: absolute;
 	height: 1px;
 	background-color: var(--grey);
 	box-shadow: 0px 0px 2px 0 rgb(237, 87, 237, 0.2);
