@@ -96,7 +96,7 @@ const TimelineContainer = styled.div`
 		width: fit-content;
 		gap: 3em;
 		align-self: center;
-		transform: translateX(5em);
+		transform: translateX(-5em);
 	}
 `;
 
