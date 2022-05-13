@@ -4,7 +4,7 @@ export default function Linkedin({ fill = "#0077b5" }) {
 			fill="#fff"
 			viewBox="0 0 512 512"
 			xmlns="http://www.w3.org/2000/svg">
-			<rect fill="#0077b5" height="512" rx="15%" width="512" />
+			<rect fill={fill} height="512" rx="15%" width="512" />
 			<circle cx="142" cy="138" r="37" fill="#fff" />
 			<path
 				d="m244 194v198m-102-198v198"

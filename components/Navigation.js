@@ -1,5 +1,6 @@
 import Locales from "@components/Locales";
 import styled from "@emotion/styled";
+import Socials from "./Socials";
 
 export default function Navigation() {
 	return (
@@ -19,5 +20,7 @@ const Nav = styled.nav`
 	margin: 0 auto;
 	padding-block: 1em;
 	display: flex;
+	gap: 0.5em;
+	align-items: center;
 	justify-content: flex-end;
 `;

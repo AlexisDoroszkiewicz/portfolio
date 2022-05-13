@@ -7,26 +7,25 @@ export default function Socials() {
 	return (
 		<SocialsContainer>
 			<a>
-				<GitHub />
+				<GitHub fill="var(--fontColor)" />
 			</a>
 			<a>
-				<Linkedin />
+				<Linkedin fill="var(--fontColor)" />
 			</a>
 			<a>
-				<Twitter />
+				<Twitter fill="var(--fontColor)" />
 			</a>
 		</SocialsContainer>
 	);
 }
 
 const SocialsContainer = styled.div`
-	width: 2rem;
+	display: flex;
+	gap: 0.5em;
 	svg {
-		max-width: 2rem;
+		width: 1rem;
 		aspect-ratio: 1 / 1;
 		fill: black;
-	}
-	a {
 		display: block;
 	}
 `;

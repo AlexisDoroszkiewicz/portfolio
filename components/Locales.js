@@ -23,17 +23,11 @@ export default function Locales() {
 
 const Flex = styled.div`
 	display: flex;
+	gap: 0.5em;
 	a {
 		text-decoration: none;
 		color: inherit;
 		font-weight: 500;
-	}
-	a:first-of-type {
-		padding-right: 0.5rem;
-		border-right: 2px solid var(--greyDark);
-	}
-	a:last-of-type {
-		padding-left: 0.5rem;
 	}
 `;
 
