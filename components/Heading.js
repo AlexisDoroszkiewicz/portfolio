@@ -40,6 +40,12 @@ export default function Heading({ heading }) {
 			row.addEventListener("mouseenter", () => hover.play());
 			row.addEventListener("mouseleave", () => hover.reverse());
 		});
+
+		return () => {
+			Object.values(document.querySelectorAll(".hwrap")).map((item) => {
+				item.style.overflow = "hidden";
+			});
+		};
 	}, [locale]);
 
 	return (
