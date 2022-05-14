@@ -3,7 +3,7 @@ import Link from "next/link";
 import styled from "@emotion/styled";
 
 export default function Locales(props) {
-	const { asPath, locale } = useRouter();
+	const { locale } = useRouter();
 
 	return (
 		<Flex {...props}>
