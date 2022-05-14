@@ -49,5 +49,6 @@ const SocialsContainer = styled.div`
 		width: 1.5em;
 		aspect-ratio: 1 / 1;
 		display: block;
+		height: fit-content;
 	}
 `;
