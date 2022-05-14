@@ -18,7 +18,6 @@ const Button = styled.a`
 	border-radius: var(--radius);
 	color: var(--accent);
 	width: fit-content;
-	font-weight: 500;
 	&:hover {
 		background-color: var(--accentAlpha);
 	}

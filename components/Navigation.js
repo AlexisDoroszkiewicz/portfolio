@@ -66,6 +66,7 @@ const Nav = styled.nav`
 	align-items: center;
 	justify-content: space-between;
 	font-size: var(--step--1);
+	font-weight: 600;
 	margin-inline: auto;
 `;
 
