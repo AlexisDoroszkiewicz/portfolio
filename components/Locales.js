@@ -27,6 +27,7 @@ const Flex = styled.div`
 	a {
 		text-decoration: none;
 		color: inherit;
+		font-size: var(--step-0);
 	}
 `;
 
