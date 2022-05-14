@@ -9,12 +9,12 @@ export default function Locales(props) {
 		<Flex {...props}>
 			<Link href={"/"} locale="fr">
 				<a>
-					<P isCurrent={locale == "fr"}>FR</P>
+					<P isCurrent={locale == "fr"}>fr</P>
 				</a>
 			</Link>
 			<Link href={"/en"} locale="en">
 				<a>
-					<P isCurrent={locale == "en"}>EN</P>
+					<P isCurrent={locale == "en"}>en</P>
 				</a>
 			</Link>
 		</Flex>
