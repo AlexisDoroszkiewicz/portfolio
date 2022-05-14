@@ -11,6 +11,7 @@ export default function Download(props) {
 }
 
 const Button = styled.a`
+	background-color: white;
 	display: block;
 	padding: 0.5em 1em;
 	text-decoration: none;
