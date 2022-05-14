@@ -2,10 +2,36 @@ import Locales from "@components/Locales";
 import styled from "@emotion/styled";
 import Download from "./Download";
 import Socials from "./Socials";
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+import { useRef, useEffect } from "react";
 
 export default function Navigation() {
+	const navRef = useRef();
+
+	useEffect(() => {
+		const reveal = gsap
+			.from(navRef.current, {
+				yPercent: -100,
+				paused: true,
+				duration: 0.4,
+				ease: "sine.out",
+			})
+			.progress(1);
+
+		ScrollTrigger.create({
+			start: "top top",
+			end: "bottom bottom",
+			onUpdate: (self) => {
+				if (window.pageYOffset > navRef.current.offsetHeight)
+					self.direction === -1 ? reveal.play() : reveal.reverse();
+			},
+		});
+	}, []);
+
 	return (
-		<Header>
+		<Header ref={navRef}>
 			<NavWrap>
 				<Nav>
 					<Locales />
