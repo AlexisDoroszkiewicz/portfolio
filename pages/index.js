@@ -50,6 +50,7 @@ const Main = styled.main`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin-bottom: 4rem;
 	& > section {
 		max-width: 1200px;
 		width: 100%;
