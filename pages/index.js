@@ -25,7 +25,6 @@ export default function Home({ home, allProjects, timeline }) {
 	return (
 		<>
 			<Head>{renderMetaTags(home._seoMetaTags)}</Head>
-			<header></header>
 			<Navigation />
 			<Main>
 				<Intro>

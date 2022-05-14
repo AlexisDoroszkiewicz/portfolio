@@ -63,27 +63,15 @@ export const globalStyles = (
 			strong {
 				color: var(--accent);
 			}
-			/* width */
-			::-webkit-scrollbar {
-				width: 8px;
-				@media (max-width: 760px) {
-					width: 4px;
-				}
+			/* Hide scrollbar for Chrome, Safari and Opera */
+			body::-webkit-scrollbar {
+				display: none;
 			}
 
-			/* Track */
-			::-webkit-scrollbar-track {
-				background: white;
-			}
-
-			/* Handle */
-			::-webkit-scrollbar-thumb {
-				background: var(--accent);
-			}
-
-			/* Handle on hover */
-			::-webkit-scrollbar-thumb:hover {
-				background: #555;
+			/* Hide scrollbar for IE, Edge and Firefox */
+			body {
+				-ms-overflow-style: none; /* IE and Edge */
+				scrollbar-width: none; /* Firefox */
 			}
 		`}
 	/>

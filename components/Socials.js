@@ -2,6 +2,7 @@ import Linkedin from "@components/Linkedin";
 import GitHub from "@components/Github";
 import Twitter from "@components/Twitter";
 import styled from "@emotion/styled";
+import Mail from "./Mail";
 
 export default function Socials() {
 	return (
@@ -23,6 +24,12 @@ export default function Socials() {
 				rel="noreferrer"
 				target="_blank">
 				<Twitter />
+			</a>
+			<a
+				href="mailto:alexis.dorosz@gmail.com"
+				rel="noreferrer"
+				target="_blank">
+				<Mail />
 			</a>
 		</SocialsContainer>
 	);
