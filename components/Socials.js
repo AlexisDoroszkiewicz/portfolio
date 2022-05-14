@@ -4,9 +4,9 @@ import Twitter from "@components/Twitter";
 import styled from "@emotion/styled";
 import Mail from "./Mail";
 
-export default function Socials() {
+export default function Socials(props) {
 	return (
-		<SocialsContainer>
+		<SocialsContainer {...props}>
 			<a
 				href="https://github.com/AlexisDoroszkiewicz"
 				rel="noreferrer"

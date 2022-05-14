@@ -2,11 +2,11 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import styled from "@emotion/styled";
 
-export default function Locales() {
+export default function Locales(props) {
 	const { asPath, locale } = useRouter();
 
 	return (
-		<Flex>
+		<Flex {...props}>
 			<Link href={"/"} locale="fr">
 				<a>
 					<P isCurrent={locale == "fr"}>FR</P>

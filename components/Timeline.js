@@ -19,7 +19,7 @@ export default function Timeline({ timeline }) {
 			cards.map((card, index) => {
 				tl.current = gsap
 					.timeline()
-					.delay(index + 1.5)
+					.delay(index + 2.5)
 					.fromTo(card, { opacity: 0 }, { opacity: 1 })
 					.fromTo(dots[index], { opacity: 0 }, { opacity: 1 }, "<");
 				index != cards.length - 1 &&
@@ -36,7 +36,7 @@ export default function Timeline({ timeline }) {
 			cards.map((card, index) => {
 				tl.current = gsap
 					.timeline()
-					.delay(index + 1.5)
+					.delay(index + 2)
 					.fromTo(card, { opacity: 0 }, { opacity: 1 })
 					.fromTo(dots[index], { opacity: 0 }, { opacity: 1 }, "<");
 				index != cards.length - 1 &&

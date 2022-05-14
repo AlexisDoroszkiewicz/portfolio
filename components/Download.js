@@ -1,10 +1,10 @@
 import styled from "@emotion/styled";
 import { useRouter } from "next/router";
 
-export default function Download() {
+export default function Download(props) {
 	const { locale } = useRouter();
 	return (
-		<Button href="/alexis-resume.pdf" download>
+		<Button href="/alexis-resume.pdf" download {...props}>
 			{locale == "fr" ? "Mon CV" : "Resume"}
 		</Button>
 	);
@@ -18,6 +18,7 @@ const Button = styled.a`
 	border-radius: var(--radius);
 	color: var(--accent);
 	width: fit-content;
+	font-weight: 500;
 	&:hover {
 		background-color: var(--accentAlpha);
 	}
