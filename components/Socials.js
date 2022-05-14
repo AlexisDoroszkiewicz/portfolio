@@ -29,21 +29,17 @@ export default function Socials() {
 }
 
 const SocialsContainer = styled.div`
-	position: fixed;
-	top: 50%;
-	right: 2.5vw;
-	transform: translateY(-50%);
 	display: flex;
-	flex-direction: column;
-	gap: 0.5em;
-	@media (max-width: 1200px) {
-		display: none;
-	}
+	gap: 1em;
 	a {
-		color: var(--accent);
+		transition: color 0.2s linear;
+		color: var(--fontColor);
+		&:hover {
+			color: var(--accent);
+		}
 	}
 	svg {
-		width: 1.5rem;
+		width: 1.5em;
 		aspect-ratio: 1 / 1;
 		display: block;
 	}

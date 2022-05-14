@@ -42,15 +42,17 @@ export default function Heading({ heading }) {
 	}, [locale]);
 
 	return (
-		<H1 ref={el}>
-			{heading.split(/\n/).map((line, index) => (
-				<div key={index} className="hwrap">
-					<div className="htext">
-						<ReactMarkdown>{line}</ReactMarkdown>
+		<div>
+			<H1 ref={el}>
+				{heading.split(/\n/).map((line, index) => (
+					<div key={index} className="hwrap">
+						<div className="htext">
+							<ReactMarkdown>{line}</ReactMarkdown>
+						</div>
 					</div>
-				</div>
-			))}
-		</H1>
+				))}
+			</H1>
+		</div>
 	);
 }
 

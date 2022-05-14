@@ -27,13 +27,11 @@ export default function Home({ home, allProjects, timeline }) {
 			<Head>{renderMetaTags(home._seoMetaTags)}</Head>
 			<header></header>
 			<Navigation />
-			<Socials />
 			<Main>
 				<Intro>
 					<Heading heading={home.pageTitle} />
 					<Timeline timeline={timeline.keyDate} />
 				</Intro>
-
 				<ProjectList allProjects={allProjects} />
 			</Main>
 			<Footer />
@@ -50,6 +48,11 @@ const Intro = styled.section`
 
 const Main = styled.main`
 	padding-inline: 5vw;
-	max-width: 1200px;
-	margin-inline: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	& > section {
+		max-width: 1200px;
+		width: 100%;
+	}
 `;
