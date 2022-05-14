@@ -7,6 +7,7 @@ import Footer from "@components/Footer";
 import Navigation from "@components/Navigation";
 import Timeline from "@components/Timeline";
 import Heading from "@components/Heading";
+import Socials from "@components/Socials";
 
 // data
 export async function getStaticProps(context) {
@@ -26,12 +27,13 @@ export default function Home({ home, allProjects, timeline }) {
 			<Head>{renderMetaTags(home._seoMetaTags)}</Head>
 			<header></header>
 			<Navigation />
-			<Intro>
-				<Heading heading={home.pageTitle} />
-				<Timeline timeline={timeline.keyDate} />
-			</Intro>
-
+			<Socials />
 			<Main>
+				<Intro>
+					<Heading heading={home.pageTitle} />
+					<Timeline timeline={timeline.keyDate} />
+				</Intro>
+
 				<ProjectList allProjects={allProjects} />
 			</Main>
 			<Footer />
@@ -41,9 +43,6 @@ export default function Home({ home, allProjects, timeline }) {
 
 const Intro = styled.section`
 	min-height: 100vh;
-	padding-inline: 5vw;
-	max-width: 1200px;
-	margin-inline: auto;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;

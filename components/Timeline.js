@@ -26,7 +26,7 @@ export default function Timeline({ timeline }) {
 					tl.current.fromTo(
 						lines[index],
 						{ height: 0 },
-						{ height: "3.5em" }
+						{ height: "4.4em" }
 					);
 				tl.current.timeScale(1.25);
 			});
@@ -65,7 +65,7 @@ export default function Timeline({ timeline }) {
 			if (window.innerWidth < 760) {
 				lines.map((line) => {
 					line.style.width = "1px";
-					line.style.height = "3.5em";
+					line.style.height = "4.4em";
 				});
 			} else {
 				lines.map((line) => {
@@ -106,7 +106,7 @@ const TimelineContainer = styled.div`
 	@media (max-width: 760px) {
 		flex-direction: column;
 		width: fit-content;
-		gap: 3em;
+		gap: 4em;
 		align-self: center;
 		transform: translateX(-5em);
 	}
@@ -148,7 +148,6 @@ const Line = styled.div`
 	opacity: 0.4;
 	box-shadow: 0px 0px 2px 0 rgb(237, 87, 237);
 	@media (max-width: 760px) {
-		height: 3.5em;
 		width: 1px;
 		transform: translateX(0.25em);
 	}
@@ -173,7 +172,7 @@ const EventKey = styled.p`
 	font-weight: 500;
 	font-size: var(--step--1);
 	@media (max-width: 760px) {
-		font-size: var(--step-0);
+		font-size: var(--step-1);
 	}
 `;
 

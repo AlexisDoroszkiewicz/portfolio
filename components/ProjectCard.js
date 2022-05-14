@@ -32,7 +32,8 @@ export default function ProjectCard({ project, index }) {
 				);
 
 				return () => {
-					content.current.removeAttribute("style");
+					content.current.hasAttribute("style") &&
+						content.current.removeAttribute("style");
 				};
 			},
 		});

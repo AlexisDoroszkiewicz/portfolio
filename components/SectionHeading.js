@@ -21,12 +21,7 @@ export default function SectionHeading({ children }) {
 				},
 			})
 			.fromTo(h2ref.current, { width: "0%" }, { width: "100%" })
-			.fromTo(
-				underline.current,
-				{ width: "0%" },
-				{ width: "100%" },
-				"<25%"
-			);
+			.fromTo(underline.current, { width: "0%" }, { width: "100%" });
 
 		hoverSkew(h2ref.current);
 	}, []);
