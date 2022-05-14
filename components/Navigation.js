@@ -20,8 +20,6 @@ const NavWrap = styled.header`
 	top: 0;
 	left: 0;
 	width: 100%;
-	display: flex;
-	justify-content: center;
 	padding-inline: 5vw;
 	padding-block: 1rem;
 	background-color: #fef9fe;
@@ -35,4 +33,5 @@ const Nav = styled.nav`
 	align-items: center;
 	justify-content: space-between;
 	font-size: var(--step--1);
+	margin-inline: auto;
 `;

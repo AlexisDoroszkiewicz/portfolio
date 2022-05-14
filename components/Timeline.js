@@ -141,7 +141,7 @@ const Line = styled.div`
 	background-color: var(--accent);
 	width: 0%;
 	height: 1px;
-	transform: translateY(-50%) translateX(0.25rem);
+	transform: translateY(-50%) translateX(0.25rem) translateZ(0);
 	position: absolute;
 	top: 50%;
 	left: 0;
