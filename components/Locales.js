@@ -28,6 +28,9 @@ const Flex = styled.div`
 		text-decoration: none;
 		color: inherit;
 		font-size: var(--step-0);
+		@media (max-width: 760px) {
+			font-size: var(--step-1);
+		}
 	}
 `;
 
