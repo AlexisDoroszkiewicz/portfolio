@@ -50,6 +50,7 @@ const Header = styled.header`
 	left: 0;
 	width: 100%;
 	z-index: 99;
+	background-color: #fffaff;
 `;
 
 const NavWrap = styled.div`

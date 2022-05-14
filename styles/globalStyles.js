@@ -10,8 +10,8 @@ export const globalStyles = (
 				--radius: 4px;
 				--grey: rgba(99, 80, 96, 0.6);
 				--border: 1px solid var(--grey);
-				--accent: rgb(227, 84, 227);
-				--accentAlpha: rgba(227, 84, 227, 0.03);
+				--accent: rgb(237, 74, 237);
+				--accentAlpha: rgba(237, 87, 237, 0.03);
 				--fontColor: rgb(35, 20, 35);
 
 				--step--2: clamp(0.61rem, calc(0.58rem + 0.16vw), 0.72rem);
