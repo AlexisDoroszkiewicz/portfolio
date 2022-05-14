@@ -24,7 +24,10 @@ export async function getStaticProps(context) {
 export default function Home({ home, allProjects, timeline }) {
 	return (
 		<>
-			<Head>{renderMetaTags(home._seoMetaTags)}</Head>
+			<Head>
+				{renderMetaTags(home._seoMetaTags)}
+				<meta property="og:image" content="/og-img.png" />
+			</Head>
 			<Navigation />
 			<Main>
 				<Intro>
