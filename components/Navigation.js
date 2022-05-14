@@ -50,7 +50,6 @@ const Header = styled.header`
 	left: 0;
 	width: 100%;
 	z-index: 99;
-	background-color: #fef9fe;
 `;
 
 const NavWrap = styled.div`
@@ -66,8 +65,9 @@ const Nav = styled.nav`
 	align-items: center;
 	justify-content: space-between;
 	font-size: var(--step--1);
-	font-weight: 600;
+	font-weight: 500;
 	margin-inline: auto;
+	z-index: 99;
 `;
 
 const Border = styled.div`
