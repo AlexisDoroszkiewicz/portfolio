@@ -24,6 +24,7 @@ export default function Navigation() {
 			start: "top top",
 			end: "bottom bottom",
 			onUpdate: (self) => {
+				console.log(self);
 				if (window.pageYOffset > navRef.current.offsetHeight)
 					self.direction === -1 ? reveal.play() : reveal.reverse();
 			},
@@ -66,6 +67,12 @@ const Nav = styled.nav`
 	align-items: center;
 	justify-content: space-between;
 	font-size: var(--step--1);
+	@media (max-width: 760px) {
+		font-size: var(--step-0);
+		& > div:first-of-type {
+			padding-right: 1em;
+		}
+	}
 	font-weight: 500;
 	margin-inline: auto;
 	z-index: 99;
