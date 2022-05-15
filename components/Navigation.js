@@ -51,7 +51,7 @@ const Header = styled.header`
 	left: 0;
 	width: 100%;
 	z-index: 99;
-	background-color: #fefbfe;
+	background-color: #fefdfe;
 `;
 
 const NavWrap = styled.div`
