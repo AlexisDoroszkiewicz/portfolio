@@ -24,7 +24,6 @@ export default function Navigation() {
 			start: "top top",
 			end: "bottom bottom",
 			onUpdate: (self) => {
-				console.log(self);
 				if (window.pageYOffset > navRef.current.offsetHeight)
 					self.direction === -1 ? reveal.play() : reveal.reverse();
 			},
