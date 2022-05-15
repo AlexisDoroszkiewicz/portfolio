@@ -19,7 +19,9 @@ const Button = styled.a`
 	border-radius: var(--radius);
 	color: var(--accent);
 	width: fit-content;
+	transition: background-color 0.1s linear, color 0.1s linear;
 	&:hover {
-		background-color: var(--accentAlpha);
+		background-color: var(--accent);
+		color: white;
 	}
 `;
