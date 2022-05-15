@@ -7,7 +7,6 @@ import Footer from "@components/Footer";
 import Navigation from "@components/Navigation";
 import Timeline from "@components/Timeline";
 import Heading from "@components/Heading";
-import Socials from "@components/Socials";
 
 // data
 export async function getStaticProps(context) {
