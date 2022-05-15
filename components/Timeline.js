@@ -57,20 +57,36 @@ export default function Timeline({ timeline }) {
 				paused: true,
 				ease: "sine.out",
 			});
-			card.addEventListener("mouseenter", () => hover.play());
-			card.addEventListener("mouseleave", () => hover.reverse());
+			card.addEventListener("mouseenter", () => {
+				if (window.innerWidth > 760) {
+					hover.play();
+				}
+			});
+			card.addEventListener("mouseleave", () => {
+				if (window.innerWidth > 760) {
+					hover.reverse();
+				}
+			});
 		});
 
 		const handleResize = () => {
 			if (window.innerWidth < 760) {
-				lines.map((line) => {
-					line.style.width = "1px";
-					line.style.height = "4.4em";
+				cards.map((card, index) => {
+					card.removeAttribute("style");
+					card.style.opacity = 1;
+					if (index < cards.length - 1) {
+						lines[index].style.width = "1px";
+						lines[index].style.height = "4.4em";
+					}
 				});
 			} else {
-				lines.map((line) => {
-					line.style.width = "100%";
-					line.style.height = "1px";
+				cards.map((card, index) => {
+					card.removeAttribute("style");
+					card.style.opacity = 1;
+					if (index < cards.length - 1) {
+						lines[index].style.width = "100%";
+						lines[index].style.height = "1px";
+					}
 				});
 			}
 		};
