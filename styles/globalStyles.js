@@ -83,6 +83,7 @@ export const globalStyles = (
 						rgba(255, 255, 255, 0) 0%,
 						var(--accentAlpha) 100%
 					);
+				border-left: 1px solid var(--grey);
 			}
 
 			/* Handle */
