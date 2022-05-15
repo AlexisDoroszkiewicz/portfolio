@@ -38,6 +38,7 @@ export default function Socials(props) {
 const SocialsContainer = styled.div`
 	display: flex;
 	gap: 1em;
+	font-size: var(--step-0);
 	a {
 		transition: color 0.2s linear;
 		color: var(--fontColor);
