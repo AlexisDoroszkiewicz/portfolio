@@ -77,6 +77,8 @@ const Card = styled.div`
 `;
 
 const ImgWrap = styled.div`
+	position: relative;
+	z-index: -1;
 	box-shadow: var(--shadow);
 	border-radius: var(--radius);
 	border: var(--border);
